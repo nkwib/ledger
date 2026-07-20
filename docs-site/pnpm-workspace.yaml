@@ -1,0 +1,4 @@
+# pnpm 11 reads build-script approvals from here. esbuild (pulled in by Vite)
+# needs its postinstall to link its platform binary.
+allowBuilds:
+  esbuild: true

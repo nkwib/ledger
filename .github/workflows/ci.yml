@@ -20,3 +20,20 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install docs-site deps
+        working-directory: docs-site
+        run: pnpm install --no-frozen-lockfile
+      - name: Build docs-site (regenerates pages from repo markdown)
+        working-directory: docs-site
+        run: pnpm build

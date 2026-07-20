@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="%sveltekit.assets%/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A verifiable offline ledger: per-device signed hash chains that merge deterministically, with typed conflicts. Zero dependencies, WebCrypto, browser + Node."
+    />
+
+    <meta name="theme-color" content="#f8fafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#07100f" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="@blocco/ledger" />
+    <meta property="og:title" content="@blocco/ledger — verifiable offline ledger" />
+    <meta
+      property="og:description"
+      content="Per-device signed hash chains that merge deterministically, with typed conflict flags. Prove offline history was not tampered with, and merge many writers verifiably."
+    />
+    <meta property="og:url" content="https://ledger-docs.workers.dev/" />
+    <meta property="og:image" content="%sveltekit.assets%/og.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@blocco/ledger — verifiable offline ledger" />
+    <meta
+      name="twitter:description"
+      content="Per-device signed hash chains that merge deterministically, with typed conflict flags. Zero deps, WebCrypto, browser + Node."
+    />
+    <meta name="twitter:image" content="%sveltekit.assets%/og.svg" />
+
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>

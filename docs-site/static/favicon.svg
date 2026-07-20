@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ledger">
+  <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="#0d7d72" />
+  <!-- shield: tamper-evident / verified -->
+  <path
+    d="M16 6.2l7 2.6v5.1c0 5.1-3.1 8.4-7 9.9-3.9-1.5-7-4.8-7-9.9V8.8L16 6.2z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.7"
+    stroke-linejoin="round"
+  />
+  <!-- verification check -->
+  <path
+    d="M12.2 15.6l2.7 2.7 5-5.4"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

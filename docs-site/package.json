@@ -1,0 +1,29 @@
+{
+  "name": "ledger-docs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:gen": "node scripts/build-docs.mjs",
+    "dev": "node scripts/build-docs.mjs && vite dev",
+    "build": "node scripts/build-docs.mjs && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@blocco/ledger": "file:.."
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@playwright/test": "^1.61.1",
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "mdsvex": "^0.12.0",
+    "mermaid": "^11.4.0",
+    "prismjs": "^1.30.0",
+    "remark-gfm": "^4.0.0",
+    "svelte": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

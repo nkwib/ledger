@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="@blocco/ledger">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1817" />
+      <stop offset="1" stop-color="#07100f" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="none" stroke="#1e2c2a" stroke-width="2" />
+
+  <g transform="translate(112,120)">
+    <rect x="0" y="0" width="64" height="64" rx="15" fill="#0d7d72" />
+    <path d="M32 14l14 5.2v10.2C46 39.6 39.8 46.2 32 49.2 24.2 46.2 18 39.6 18 29.4V19.2L32 14z"
+      fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round" />
+    <path d="M24.4 31.2l5.4 5.4 10-10.8" fill="none" stroke="#ffffff" stroke-width="4"
+      stroke-linecap="round" stroke-linejoin="round" />
+    <text x="86" y="46" font-family="ui-monospace, Menlo, monospace" font-size="40" fill="#eef4f3" font-weight="600">@blocco/ledger</text>
+  </g>
+
+  <text x="112" y="330" font-family="Inter, system-ui, sans-serif" font-size="66" fill="#eef4f3" font-weight="700" letter-spacing="-2">Verifiable offline ledger.</text>
+  <text x="112" y="410" font-family="Inter, system-ui, sans-serif" font-size="34" fill="#9db1ae" font-weight="400">Per-device signed hash chains that merge deterministically,</text>
+  <text x="112" y="454" font-family="Inter, system-ui, sans-serif" font-size="34" fill="#9db1ae" font-weight="400">with typed conflict flags. Zero deps. WebCrypto. Browser + Node.</text>
+
+  <g transform="translate(112,516)" font-family="ui-monospace, Menlo, monospace" font-size="26">
+    <rect x="0" y="-30" width="150" height="44" rx="22" fill="#0a2a27" stroke="#0d7d72" />
+    <text x="24" y="0" fill="#2dd4bf">verified</text>
+    <rect x="170" y="-30" width="220" height="44" rx="22" fill="#0d1817" stroke="#1e2c2a" />
+    <text x="194" y="0" fill="#9db1ae">deterministic merge</text>
+    <rect x="410" y="-30" width="180" height="44" rx="22" fill="#0d1817" stroke="#1e2c2a" />
+    <text x="434" y="0" fill="#9db1ae">tamper-evident</text>
+  </g>
+</svg>
