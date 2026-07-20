@@ -1,0 +1,49 @@
+{
+	"name": "@blocco/ledger",
+	"version": "0.1.0",
+	"description": "Verifiable offline ledger substrate: per-device signed hash chains that merge deterministically, with typed conflict flags. Zero dependencies, isomorphic, WebCrypto only.",
+	"license": "MIT",
+	"author": "Gabriele Magno",
+	"type": "module",
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"production": "./src/index.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"src",
+		"docs",
+		"examples",
+		"README.md",
+		"CHANGELOG.md",
+		"SECURITY.md",
+		"LICENSE"
+	],
+	"keywords": [
+		"ledger",
+		"hash-chain",
+		"tamper-evident",
+		"ecdsa",
+		"signatures",
+		"crdt",
+		"merge",
+		"local-first",
+		"offline-first",
+		"webcrypto",
+		"audit-log"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"test": "vitest run",
+		"prepublishOnly": "pnpm build"
+	}
+}

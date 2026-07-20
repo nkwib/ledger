@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>@blocco/ledger in the browser</title>
+		<!--
+			Dependency-free, runs in any modern browser. The only setup is building the
+			library once so the browser has plain JS to import:
+
+			    pnpm --filter @blocco/ledger build      # produces ../dist/index.js
+			    npx serve packages/ledger/examples       # or any static file server
+			    open http://localhost:3000/browser.html
+
+			The import map below points the bare name "@blocco/ledger" at the built ESM.
+			WebCrypto (crypto.subtle) requires a secure context: localhost counts, as does
+			any https origin. Opening via file:// will not work (modules + subtle crypto).
+		-->
+		<script type="importmap">
+			{ "imports": { "@blocco/ledger": "../dist/index.js" } }
+		</script>
+		<style>
+			body { font: 15px/1.5 system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; }
+			button { font: inherit; padding: 0.4rem 0.8rem; margin-right: 0.5rem; cursor: pointer; }
+			pre { background: #f4f4f5; padding: 1rem; border-radius: 8px; overflow-x: auto; white-space: pre-wrap; }
+			.ok { color: #15803d; } .bad { color: #b91c1c; }
+			h1 { font-size: 1.4rem; }
+		</style>
+	</head>
+	<body>
+		<h1>@blocco/ledger: sign, merge, tamper</h1>
+		<p>
+			Two in-browser devices sign entries onto their own hash chains, the logs merge
+			deterministically, then one byte is tampered and verification names the exact
+			broken entry. Watch the log below.
+		</p>
+		<p>
+			<button id="run">Run the demo</button>
+			<button id="clear">Clear</button>
+		</p>
+		<pre id="out">Click "Run the demo".</pre>
+
+		<script type="module">
+			import {
+				generateDeviceKey, deviceIdentity, appendEntry, signEntry,
+				mergeLedgers, verifyAndMergeLedgers, defaultContent, defaultCodec
+			} from '@blocco/ledger';
+
+			const out = document.getElementById('out');
+			const line = (s, cls) => {
+				const span = document.createElement('span');
+				if (cls) span.className = cls;
+				span.textContent = s + '\n';
+				out.appendChild(span);
+			};
+
+			async function demo() {
+				out.textContent = '';
+				if (!globalThis.crypto?.subtle) {
+					line('crypto.subtle unavailable: serve over http://localhost or https.', 'bad');
+					return;
+				}
+
+				const phone = await generateDeviceKey();
+				const tablet = await generateDeviceKey();
+				const idP = await deviceIdentity(phone);
+				const idT = await deviceIdentity(tablet);
+				line('phone  ' + idP.deviceId.slice(0, 16) + '...');
+				line('tablet ' + idT.deviceId.slice(0, 16) + '...');
+
+				const sigs = {};
+				const put = async (key, dev, id, head, payload) => {
+					const e = await appendEntry({ id, deviceId: dev.deviceId, ts: Date.now(), payload }, head);
+					sigs[e.id] = await signEntry(key.privateKey, e, defaultContent);
+					return e;
+				};
+
+				const p0 = await put(phone, idP, 'p0', null, { athlete: 'ada', points: 2 });
+				const p1 = await put(phone, idP, 'p1', p0, { athlete: 'ada', points: 3 });
+				const t0 = await put(tablet, idT, 't0', null, { athlete: 'bo', points: 4 });
+
+				const { entries } = mergeLedgers([[p0, p1], [t0]], defaultCodec);
+				const totals = {};
+				for (const e of entries) totals[e.payload.athlete] = (totals[e.payload.athlete] ?? 0) + e.payload.points;
+				line('merged ' + entries.length + ' entries. totals ' + JSON.stringify(totals));
+
+				const registry = {
+					[idP.deviceId]: { publicKeyJwk: idP.publicKeyJwk },
+					[idT.deviceId]: { publicKeyJwk: idT.publicKeyJwk }
+				};
+				const clean = await verifyAndMergeLedgers([[p0, p1], [t0]], defaultCodec, registry, sigs);
+				line('verify (clean): ' + clean.conflicts.length + ' conflicts', clean.conflicts.length ? 'bad' : 'ok');
+
+				const forged = { ...p1, payload: { athlete: 'ada', points: 999 } };
+				const check = await verifyAndMergeLedgers([[p0, forged], [t0]], defaultCodec, registry, sigs);
+				line('verify (tampered): ' + check.conflicts.length + ' conflicts', 'bad');
+				for (const c of check.conflicts) line('  ' + c.kind + ' -> ' + c.entryId, 'bad');
+			}
+
+			document.getElementById('run').addEventListener('click', () => demo().catch((e) => line(String(e), 'bad')));
+			document.getElementById('clear').addEventListener('click', () => { out.textContent = 'Click "Run the demo".'; });
+		</script>
+	</body>
+</html>
