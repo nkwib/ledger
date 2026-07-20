@@ -142,3 +142,13 @@ ${body}
 }
 
 console.log(`docs pipeline: generated ${count} page(s) from repo markdown.`);
+
+// Animated hero: single source lives in ../.github/assets (kept out of the npm tarball).
+{
+  const { copyFileSync, existsSync } = await import('node:fs');
+  const src = new URL('../../.github/assets/demo.gif', import.meta.url);
+  if (existsSync(src)) {
+    copyFileSync(src, new URL('../static/demo.gif', import.meta.url));
+    console.log('docs pipeline: copied animated hero -> static/demo.gif');
+  }
+}

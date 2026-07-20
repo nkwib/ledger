@@ -2,6 +2,8 @@
 
 Prove your offline app's history was not tampered with, and merge many writers verifiably. Zero dependencies.
 
+![Animated demo: sign entries on two devices, merge deterministically, tamper one byte, and verification fails naming the exact entry.](https://raw.githubusercontent.com/nkwib/ledger/main/.github/assets/demo.gif)
+
 > The package name `@blocco/ledger` is a placeholder. Renaming is a one-line change in `package.json`.
 
 ## The 60-second pitch

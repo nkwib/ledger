@@ -335,7 +335,7 @@
     <div class="narration">
       <span class="tag">3 · Merge</span>
       <code>mergeLedgers</code> unions both logs, dedupes by id, and returns one total order
-      <code>(seq, deviceId, ts, id)</code> — identical no matter the arrival order.
+      <code>(seq, deviceId, ts, id)</code>, identical no matter the arrival order.
       <code>verifyAndMergeLedgers</code> then re-checks every chain and signature.
     </div>
 
@@ -347,7 +347,7 @@
       <div class="merge-result">
         <div class="verdict {merged.conflicts.length === 0 ? 'good' : 'bad'}">
           {#if merged.conflicts.length === 0}
-            ✓ 0 conflicts — every chain links, every hash matches, every signature verifies.
+            ✓ 0 conflicts: every chain links, every hash matches, every signature verifies.
           {:else}
             {merged.conflicts.length} conflict(s) found.
           {/if}
@@ -424,7 +424,7 @@
         </div>
 
         <div class="verdict bad">
-          {tamper.conflicts.length} typed conflict(s) — verification failed.
+          {tamper.conflicts.length} typed conflict(s): verification failed.
         </div>
 
         <div class="conflicts">

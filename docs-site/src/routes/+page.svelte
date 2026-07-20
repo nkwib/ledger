@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-  <title>@blocco/ledger — verifiable offline ledger</title>
+  <title>@blocco/ledger: verifiable offline ledger</title>
   <meta
     name="description"
     content="Prove your offline app's history was not tampered with, and merge many writers verifiably. Per-device signed hash chains, deterministic merge, typed conflicts. Zero dependencies."
@@ -68,7 +68,7 @@
         Local-first apps create data on offline devices, edited by different people, synced
         later in any order. <strong>@blocco/ledger</strong> gives each device a signed
         hash chain, merges them deterministically, and surfaces tampering, forks, and
-        forged signatures as <strong>typed conflict flags</strong> — never silent failures.
+        forged signatures as <strong>typed conflict flags</strong>, never silent failures.
       </p>
 
       <div class="cta">
@@ -229,6 +229,9 @@
         <code>verifyAndMergeLedgers</code> re-checks chains and signatures. Zero conflicts means everything checks out.
       </li>
     </ol>
+    <a href="/playground" aria-label="Open the interactive playground">
+      <img src="/demo.gif" alt="Animated demo: two devices sign entries, the logs merge with zero conflicts, then one flipped byte makes verification fail with typed conflicts naming the entry." width="720" height="576" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin:1.5rem 0;" />
+    </a>
     <div class="cta">
       <a class="btn primary" href="/playground">Try it live in the playground →</a>
       <a class="btn ghost" href="/tutorial">Full tutorial</a>

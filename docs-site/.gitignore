@@ -13,3 +13,9 @@ src/routes/(docs)/howto/transport/+page.svx
 src/routes/(docs)/reference/+page.svx
 src/routes/(docs)/threat-model/+page.svx
 src/routes/(docs)/design/+page.svx
+
+# Local capture artifacts
+gif-out/
+preview.log
+# Copied from ../.github/assets at build time
+static/demo.gif
