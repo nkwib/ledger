@@ -17,7 +17,7 @@ intends to stay that way.
 
 ## Dev setup
 
-The package lives in a pnpm workspace.
+Clone the repo, then:
 
 ```sh
 pnpm install

@@ -50,7 +50,7 @@ async function buildChain(
 	let head: Entry | null = null;
 	let ts = 1000;
 	for (const spec of specs) {
-		const row = await appendEntry({ id: spec.id, deviceId, ts: ts++, payload: spec.payload }, head);
+		const row: Entry = await appendEntry({ id: spec.id, deviceId, ts: ts++, payload: spec.payload }, head);
 		sigs[row.id] = await signEntry(privateKey, row, defaultContent);
 		rows.push(row);
 		head = row;

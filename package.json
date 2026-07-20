@@ -4,6 +4,12 @@
 	"description": "Verifiable offline ledger substrate: per-device signed hash chains that merge deterministically, with typed conflict flags. Zero dependencies, isomorphic, WebCrypto only.",
 	"license": "MIT",
 	"author": "Gabriele Magno",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nkwib/ledger.git"
+	},
+	"homepage": "https://github.com/nkwib/ledger#readme",
+	"bugs": "https://github.com/nkwib/ledger/issues",
 	"type": "module",
 	"sideEffects": false,
 	"engines": {
@@ -19,6 +25,7 @@
 		}
 	},
 	"files": [
+		"dist",
 		"src",
 		"docs",
 		"examples",
@@ -45,5 +52,10 @@
 		"typecheck": "tsc -p tsconfig.json --noEmit",
 		"test": "vitest run",
 		"prepublishOnly": "pnpm build"
+	},
+	"devDependencies": {
+		"@types/node": "^26.1.1",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.10"
 	}
 }
