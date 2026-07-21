@@ -18,7 +18,7 @@ the payload is just an athlete and their points.
 import {
 	generateDeviceKey, deviceIdentity, appendEntry, signEntry,
 	mergeLedgers, verifyAndMergeLedgers, defaultContent, defaultCodec
-} from '@blocco/ledger';
+} from '@nkwib/ledger';
 
 // A payload is anything JSON-serializable. This is ours:
 //   { athlete: string, points: number }

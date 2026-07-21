@@ -3,21 +3,21 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>@blocco/ledger in the browser</title>
+		<title>@nkwib/ledger in the browser</title>
 		<!--
 			Dependency-free, runs in any modern browser. The only setup is building the
 			library once so the browser has plain JS to import:
 
-			    pnpm --filter @blocco/ledger build      # produces ../dist/index.js
+			    pnpm --filter @nkwib/ledger build      # produces ../dist/index.js
 			    npx serve packages/ledger/examples       # or any static file server
 			    open http://localhost:3000/browser.html
 
-			The import map below points the bare name "@blocco/ledger" at the built ESM.
+			The import map below points the bare name "@nkwib/ledger" at the built ESM.
 			WebCrypto (crypto.subtle) requires a secure context: localhost counts, as does
 			any https origin. Opening via file:// will not work (modules + subtle crypto).
 		-->
 		<script type="importmap">
-			{ "imports": { "@blocco/ledger": "../dist/index.js" } }
+			{ "imports": { "@nkwib/ledger": "../dist/index.js" } }
 		</script>
 		<style>
 			body { font: 15px/1.5 system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; }
@@ -28,7 +28,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>@blocco/ledger: sign, merge, tamper</h1>
+		<h1>@nkwib/ledger: sign, merge, tamper</h1>
 		<p>
 			Two in-browser devices sign entries onto their own hash chains, the logs merge
 			deterministically, then one byte is tampered and verification names the exact
@@ -44,7 +44,7 @@
 			import {
 				generateDeviceKey, deviceIdentity, appendEntry, signEntry,
 				mergeLedgers, verifyAndMergeLedgers, defaultContent, defaultCodec
-			} from '@blocco/ledger';
+			} from '@nkwib/ledger';
 
 			const out = document.getElementById('out');
 			const line = (s, cls) => {

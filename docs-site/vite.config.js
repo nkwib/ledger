@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [sveltekit()],
   resolve: {
     alias: {
-      '@blocco/ledger': ledgerSrc
+      '@nkwib/ledger': ledgerSrc
     }
   }
 });

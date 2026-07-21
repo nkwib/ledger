@@ -1,4 +1,4 @@
-# Cloudflare Workers + Static Assets configuration for the @blocco/ledger docs site.
+# Cloudflare Workers + Static Assets configuration for the @nkwib/ledger docs site.
 # Deploy after `pnpm build` produces ./build:
 #   pnpm build && npx wrangler deploy
 

@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      '@blocco/ledger':
+      '@nkwib/ledger':
         specifier: file:..
         version: file:..
     devDependencies:
@@ -54,7 +54,7 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@blocco/ledger@file:..':
+  '@nkwib/ledger@file:..':
     resolution: {directory: .., type: directory}
     engines: {node: '>=20'}
 
@@ -1202,7 +1202,7 @@ snapshots:
       package-manager-detector: 1.7.0
       tinyexec: 1.2.4
 
-  '@blocco/ledger@file:..': {}
+  '@nkwib/ledger@file:..': {}
 
   '@braintree/sanitize-url@7.1.2': {}
 

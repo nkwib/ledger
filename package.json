@@ -1,5 +1,5 @@
 {
-	"name": "@blocco/ledger",
+	"name": "@nkwib/ledger",
 	"version": "0.1.0",
 	"description": "Verifiable offline ledger substrate: per-device signed hash chains that merge deterministically, with typed conflict flags. Zero dependencies, isomorphic, WebCrypto only.",
 	"license": "MIT",

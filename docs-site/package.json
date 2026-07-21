@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@blocco/ledger": "file:.."
+    "@nkwib/ledger": "file:.."
   },
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",

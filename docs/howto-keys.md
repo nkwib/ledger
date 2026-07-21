@@ -7,7 +7,7 @@ non-extractable.
 ## Create a device key
 
 ```js
-import { generateDeviceKey, deviceIdentity } from '@blocco/ledger';
+import { generateDeviceKey, deviceIdentity } from '@nkwib/ledger';
 
 const pair = await generateDeviceKey();          // ECDSA P-256 CryptoKeyPair
 const identity = await deviceIdentity(pair);      // { deviceId, publicKeyJwk }
@@ -26,7 +26,7 @@ Peers need your public key (as a JWK) to verify your entries. Publish
 when verifying:
 
 ```js
-import { exportPublicKey, importPublicKey } from '@blocco/ledger';
+import { exportPublicKey, importPublicKey } from '@nkwib/ledger';
 
 const jwk = await exportPublicKey(pair.publicKey); // same as identity.publicKeyJwk
 const pub = await importPublicKey(jwk);            // verify-only CryptoKey

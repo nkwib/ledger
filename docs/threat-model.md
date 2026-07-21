@@ -1,12 +1,12 @@
 # Threat model
 
-Read this before you trust `@blocco/ledger` with anything that matters. A crypto library
+Read this before you trust `@nkwib/ledger` with anything that matters. A crypto library
 is only as good as your understanding of what it does and does not promise. This page is
 in plain language on purpose.
 
 ## The one-sentence summary
 
-`@blocco/ledger` makes it detectable when a signed record is changed AFTER it was
+`@nkwib/ledger` makes it detectable when a signed record is changed AFTER it was
 written, and it lets many devices agree on one history. It does NOT stop a device from
 writing a false record in the first place, hide anything, or keep your system online.
 

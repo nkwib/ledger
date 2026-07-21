@@ -21,7 +21,7 @@ The recommended shape `LedgerEntry<P>` has a ready-made projection, `defaultCont
 that protects `{ id, deviceId, seq, ts, prev, payload }`:
 
 ```js
-import { defaultContent } from '@blocco/ledger';
+import { defaultContent } from '@nkwib/ledger';
 ```
 
 If your entries are flat (domain fields as siblings of the envelope) or you need to
@@ -51,7 +51,7 @@ device. It does not recompute hashes, so it cannot catch a field edit that was f
 by a recomputed hash; use it as a cheap pre-check.
 
 ```js
-import { verifyChainLink } from '@blocco/ledger';
+import { verifyChainLink } from '@nkwib/ledger';
 verifyChainLink(entries); // boolean
 ```
 
@@ -59,7 +59,7 @@ verifyChainLink(entries); // boolean
 content. Any edited field makes the recomputed hash diverge and returns `false`.
 
 ```js
-import { verifyChain } from '@blocco/ledger';
+import { verifyChain } from '@nkwib/ledger';
 await verifyChain(entries, content); // boolean
 ```
 
@@ -70,7 +70,7 @@ fail verification.
 ## Verify a single signature
 
 ```js
-import { verifyEntrySignature } from '@blocco/ledger';
+import { verifyEntrySignature } from '@nkwib/ledger';
 const ok = await verifyEntrySignature(publicKey, entry, signatureB64, content);
 ```
 
@@ -86,7 +86,7 @@ logs and then, per device, runs `verifyChain` and checks every signature against
 registry. See [how to handle conflicts](./howto-conflicts.md) for the result shape.
 
 ```js
-import { verifyAndMergeLedgers } from '@blocco/ledger';
+import { verifyAndMergeLedgers } from '@nkwib/ledger';
 
 const registry = { [id.deviceId]: { publicKeyJwk: id.publicKeyJwk } };
 const { entries, conflicts } = await verifyAndMergeLedgers(
@@ -105,7 +105,7 @@ Because a device id is the hash of its public key, a peer can recompute it and r
 registry that lies:
 
 ```js
-import { getDeviceId, deviceIdMatches } from '@blocco/ledger';
+import { getDeviceId, deviceIdMatches } from '@nkwib/ledger';
 
 await getDeviceId(jwk);                    // the id this key certifies to
 await deviceIdMatches(claimedId, jwk);     // false if the registry is dishonest

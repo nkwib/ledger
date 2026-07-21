@@ -125,9 +125,9 @@ for (const page of pages) {
   const body = transformBody(raw, page.src);
 
   const svx = `<svelte:head>
-  <title>${escText(title)} · @blocco/ledger</title>
+  <title>${escText(title)} · @nkwib/ledger</title>
   <meta name="description" content="${escAttr(description)}" />
-  <meta property="og:title" content="${escAttr(title)} · @blocco/ledger" />
+  <meta property="og:title" content="${escAttr(title)} · @nkwib/ledger" />
   <meta property="og:description" content="${escAttr(description)}" />
 </svelte:head>
 

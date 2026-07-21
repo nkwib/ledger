@@ -1,6 +1,6 @@
 # API reference
 
-Every public export of `@blocco/ledger`. All async functions return Promises. All
+Every public export of `@nkwib/ledger`. All async functions return Promises. All
 functions are pure except those that touch `globalThis.crypto` (noted). Nothing has
 import-time side effects.
 
@@ -212,7 +212,7 @@ The library favors typed results over exceptions:
 
 ## Name mapping from the parent app (Italian to English)
 
-`@blocco/ledger` was extracted from an Italian-named codebase. If you are reading that
+`@nkwib/ledger` was extracted from an Italian-named codebase. If you are reading that
 app or migrating from it, the public names map as follows.
 
 | App (Italian) | Library (English) |

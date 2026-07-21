@@ -5,7 +5,7 @@
 // broken entry.
 //
 // Run it:
-//   - In this repo:      pnpm --filter @blocco/ledger test   (runs it via Vitest)
+//   - In this repo:      pnpm --filter @nkwib/ledger test   (runs it via Vitest)
 //   - As a dependency:   node node-scoreboard.mjs
 //
 // The `runScoreboard()` export is exercised by example.test.ts so this file can
@@ -21,7 +21,7 @@ import {
 	mergeLedgers,
 	verifyAndMergeLedgers,
 	defaultCodec
-} from '@blocco/ledger';
+} from '@nkwib/ledger';
 
 export async function runScoreboard({ log = () => {} } = {}) {
 	// 1. Each device gets a keypair and a self-certifying id.

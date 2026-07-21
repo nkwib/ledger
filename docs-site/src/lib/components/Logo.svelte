@@ -26,7 +26,7 @@
       stroke-linejoin="round"
     />
   </svg>
-  <span class="wordmark">@blocco/ledger</span>
+  <span class="wordmark">@nkwib/ledger</span>
 </span>
 
 <style>

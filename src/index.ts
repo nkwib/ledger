@@ -1,5 +1,5 @@
 /**
- * @blocco/ledger — a verifiable offline ledger substrate.
+ * @nkwib/ledger — a verifiable offline ledger substrate.
  *
  * Per-device ECDSA-signed SHA-256 hash chains that merge deterministically into
  * one ordered log, with typed conflict flags. Zero runtime dependencies,

@@ -6,7 +6,7 @@
 <footer class="footer">
   <div class="inner">
     <div class="meta">
-      <span class="brand-mark">@blocco/ledger</span>
+      <span class="brand-mark">@nkwib/ledger</span>
       <span class="dot" aria-hidden="true">·</span>
       <span class="muted">Verifiable offline ledger: signed hash chains, deterministic merge, typed conflicts</span>
     </div>

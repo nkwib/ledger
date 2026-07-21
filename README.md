@@ -1,10 +1,10 @@
-# @blocco/ledger
+# @nkwib/ledger
 
 Prove your offline app's history was not tampered with, and merge many writers verifiably. Zero dependencies.
 
 ![Animated demo: sign entries on two devices, merge deterministically, tamper one byte, and verification fails naming the exact entry.](https://raw.githubusercontent.com/nkwib/ledger/main/.github/assets/demo.gif)
 
-> The package name `@blocco/ledger` is a placeholder. Renaming is a one-line change in `package.json`.
+> The package name `@nkwib/ledger` is a placeholder. Renaming is a one-line change in `package.json`.
 
 ## The 60-second pitch
 
@@ -18,7 +18,7 @@ fall out of that:
 
 CRDTs (Automerge, Yjs) solve merging but say nothing about authenticity: a peer can
 rewrite history and the merge accepts it. Signed audit logs solve authenticity but
-assume a single writer. `@blocco/ledger` does both, with a deliberately small idea:
+assume a single writer. `@nkwib/ledger` does both, with a deliberately small idea:
 
 - Every device keeps an append-only **SHA-256 hash chain**. Change one field and the
   chain no longer verifies.
@@ -36,8 +36,8 @@ the library gives you the verifiable core. It runs the same in a browser and in 
 ## Install
 
 ```sh
-npm install @blocco/ledger
-# or: pnpm add @blocco/ledger  /  yarn add @blocco/ledger
+npm install @nkwib/ledger
+# or: pnpm add @nkwib/ledger  /  yarn add @nkwib/ledger
 ```
 
 ESM only. TypeScript types are included.
@@ -51,7 +51,7 @@ names the exact broken entry. This runs as-is on Node >= 20.
 import {
 	generateDeviceKey, deviceIdentity, appendEntry, signEntry,
 	mergeLedgers, verifyAndMergeLedgers, defaultCodec, defaultContent
-} from '@blocco/ledger';
+} from '@nkwib/ledger';
 
 const [a, b] = [await generateDeviceKey(), await generateDeviceKey()];
 const [idA, idB] = [await deviceIdentity(a), await deviceIdentity(b)];

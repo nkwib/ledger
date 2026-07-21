@@ -63,7 +63,7 @@ after transport. A relay that tampers with entries in flight produces `broken_ch
 
 ## Reference implementation: the parent app
 
-`@blocco/ledger` was extracted from a bouldering-competition PWA where these exact
+`@nkwib/ledger` was extracted from a bouldering-competition PWA where these exact
 transports ship. The app keeps transport OUT of the library, in
 `src/lib/transport/pacchetto.ts`, which is worth reading as a concrete pattern:
 

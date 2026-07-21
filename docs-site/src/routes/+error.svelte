@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>{$page.status} · @blocco/ledger</title>
+  <title>{$page.status} · @nkwib/ledger</title>
 </svelte:head>
 
 <section class="err">

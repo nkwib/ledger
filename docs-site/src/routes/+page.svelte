@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-  <title>@blocco/ledger: verifiable offline ledger</title>
+  <title>@nkwib/ledger: verifiable offline ledger</title>
   <meta
     name="description"
     content="Prove your offline app's history was not tampered with, and merge many writers verifiably. Per-device signed hash chains, deterministic merge, typed conflicts. Zero dependencies."
@@ -66,7 +66,7 @@
       </h1>
       <p class="lede">
         Local-first apps create data on offline devices, edited by different people, synced
-        later in any order. <strong>@blocco/ledger</strong> gives each device a signed
+        later in any order. <strong>@nkwib/ledger</strong> gives each device a signed
         hash chain, merges them deterministically, and surfaces tampering, forks, and
         forged signatures as <strong>typed conflict flags</strong>, never silent failures.
       </p>
@@ -81,7 +81,7 @@
         <a class="btn ghost" href="/tutorial">Read the tutorial</a>
       </div>
 
-      <pre class="install"><span class="prompt">$</span> npm install @blocco/ledger</pre>
+      <pre class="install"><span class="prompt">$</span> npm install @nkwib/ledger</pre>
     </div>
 
     <aside class="demo" aria-label="Quickstart with tamper detection">

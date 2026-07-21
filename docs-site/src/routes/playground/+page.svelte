@@ -11,7 +11,7 @@
     defaultContent,
     defaultCodec,
     cryptoAvailable
-  } from '@blocco/ledger';
+  } from '@nkwib/ledger';
 
   // --- Non-reactive runtime: real CryptoKey objects must NOT be wrapped in a
   // Svelte $state proxy (WebCrypto rejects proxied keys), so identities and
@@ -207,7 +207,7 @@
 </script>
 
 <svelte:head>
-  <title>Playground · @blocco/ledger</title>
+  <title>Playground · @nkwib/ledger</title>
   <meta
     name="description"
     content="Interactive, in-browser playground: two devices sign entries onto hash chains, merge deterministically, then tamper one byte and watch verification fail with typed conflicts. Real WebCrypto, no server."
@@ -443,7 +443,7 @@
   </section>
 
   <p class="foot-note">
-    This runs the real library (imported as <code>@blocco/ledger</code>) against your
+    This runs the real library (imported as <code>@nkwib/ledger</code>) against your
     browser's WebCrypto. Read the <a href="/tutorial">tutorial</a> to build the same thing
     from scratch, or the <a href="/howto/conflicts">conflict guide</a> for what each flag means.
   </p>

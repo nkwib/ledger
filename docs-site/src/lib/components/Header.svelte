@@ -23,7 +23,7 @@
 
 <header class="header">
   <div class="inner">
-    <a href="/" class="brand" aria-label="@blocco/ledger home">
+    <a href="/" class="brand" aria-label="@nkwib/ledger home">
       <Logo />
       <span class="version" aria-hidden="true">{VERSION}</span>
     </a>
