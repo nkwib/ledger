@@ -4,7 +4,8 @@
 
 Please report security issues privately. Do NOT open a public issue for a vulnerability.
 
-Email the maintainer with:
+Use GitHub's private reporting: open the **Security** tab on this repository and choose
+**Report a vulnerability**. Include:
 
 - a description of the issue and its impact,
 - steps to reproduce (a minimal script is ideal),
@@ -14,9 +15,6 @@ Email the maintainer with:
 You can expect an acknowledgement within a few days and a fix or mitigation plan for
 confirmed issues. Coordinated disclosure is appreciated: please give a reasonable window
 before publishing details.
-
-> Maintainer contact is a placeholder for the project owner to fill in (a dedicated
-> security address or the owner's email).
 
 ## Scope
 
